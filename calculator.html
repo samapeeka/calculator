@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CALCULATOR</title>
+    <style>
+      body {
+	  background-color: #3d3232;
+      background-image: url('maths.jpg');
+      background-blend-mode: darken;
+      }
+	  h1{
+		font-family: 'Courier New', Courier, monospace;
+		color: blanchedalmond;
+	  }
+	  button{
+		color: rgb(25, 20, 20);
+		font-size: x-large;
+		gap: 10px;
+		height: 2cm;
+		width: 2cm;
+		border-color: black;
+		border-width: 10px;
+		border-style: solid;
+		
+	  }
+	  button:hover{
+		background-color: chocolate;
+	  }
+	  #display{
+		height:2cm;
+		width:8cm;
+		border-color: black;
+		border-width: 10px;
+		border-style: solid;
+	  }
+    </style>
+  </head>
+  <body>
+	<center>
+      <h1> SIMPLE CALCULATOR</h1>
+	    <div class="display">
+			<input type="text" id="display" name="display" readonly>
+        </div>
+	    <div class="buttons">
+			<button onclick="display('7')">7</button>
+			<button onclick="display('8')">8</button>
+			<button onclick="display('9')">9</button>
+			<button onclick="display('+')">+</button>
+			<br>
+			<button onclick="display('4')">4</button>
+			<button onclick="display('5')">5</button>
+			<button onclick="display('6')">6</button>
+			<button onclick="display('-')">-</button>
+			<br>
+			<button onclick="display('1')">1</button>
+			<button onclick="display('2')">2</button>
+			<button onclick="display('3')">3</button>
+			<button onclick="display('*')">*</button>
+			<br>
+			<button style="background-color: brown;color: aliceblue;" onclick="cl()">C</button>
+			<button onclick="display('0')">0</button>
+			<button onclick="result()">=</button>
+			<button onclick="display('/')">/</button>
+	    </div>
+	</center>
+	<script>
+		let value1="";
+
+		function display(v){
+			value1+=v;
+			document.getElementById("display").value=value1;
+		}
+
+		function cl(){
+			value1="";
+			document.getElementById("display").value="";
+		}
+		
+		function result(){
+			try{
+				value1=eval(value1);
+				document.getElementById("display").value=value1;
+			}catch(error){
+				document.getElementById("display").value="ERROR";
+			}
+		}
+	</script>
+  </body>
+  
+</html>
